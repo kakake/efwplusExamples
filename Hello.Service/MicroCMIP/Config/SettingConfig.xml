@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <hostname value="根节点">
+  </hostname>
+  <cdkey value="lYZbQE/SoVIWZc0Q+qh747csXn9+vAJaINJVU2Sm8EuQyNymVzWDLsbpy566ite6">
+  </cdkey>
+  <rootmnode value="1">
+  </rootmnode>
+  <debug value="1">
+  </debug>
+  <filetransfer value="1">
+  </filetransfer>
+  <timingtask value="1">
+  </timingtask>
+  <heartbeat value="1">
+  </heartbeat>
+  <heartbeattime value="1">
+  </heartbeattime>
+  <message value="0">
+  </message>
+  <messagetime value="1">
+  </messagetime>
+  <compress value="1">
+  </compress>
+  <encryption value="0">
+  </encryption>
+  <token value="0">
+  </token>
+  <serializetype value="0">
+  </serializetype>
+  <overtime value="1">
+  </overtime>
+  <overtimetime value="1">
+  </overtimetime>
+  <issaas value="1">
+  </issaas>
+  <wcfservice value="1">
+  </wcfservice>
+  <router value="1">
+  </router>
+  <webapi value="0">
+  </webapi>
+  <mongodb value="1">
+  </mongodb>
+  <mongodb_binpath value="C:\MongoDB\Server\3.2\bin">
+  </mongodb_binpath>
+  <mongodb_dbpath value="C:\">
+  </mongodb_dbpath>
+  <mongodb_conn value="mongodb://localhost:27017">
+  </mongodb_conn>
+  <nginx value="0">
+  </nginx>
+  <nginx_binpath value="D:\efwplusProject\efwplusExamples\Hello.Service\efwplusUI\efwplusNginxHost.exe">
+  </nginx_binpath>
+  <updaterurl value="http://localhost:8810/FileStore/MNodeUpgrade/update.xml"></updaterurl>
+</root>

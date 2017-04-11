@@ -1,0 +1,119 @@
+﻿<script id="mnodeplugin-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-g">
+            <form class="am-u-sm-12 am-form-inline">
+                <div class="am-form-group">
+                    <select data-am-selected="" id="mnodelist">
+                        {{#each data.nodes}}
+                        <option value="{{identify}}">{{nodename}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="am-form-group">
+                    <span>
+                        <button class="am-btn am-btn-default" type="button" id="btn_query">确定</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-padding-top">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button id="btn_plugin_addlocal" type="button" class="am-btn am-btn-default"><span class="am-icon-plus-square"></span> 添加本地插件</button>
+                        <button id="btn_plugin_addremote" type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span> 添加远程插件</button>
+                        <button id="btn_plugin_del" type="button" class="am-btn am-btn-default"><span class="am-icon-remove"></span> 删除</button>
+                    </div>
+                </div>
+                <div class="am-panel am-panel-default">
+                    <div class="am-panel-bd">
+                        <div class="am-g am-padding-xs">
+                            <ul class="am-tree am-tree-folder-select" role="tree" id="firstTree">
+                                <li class="am-tree-branch am-hide" data-template="treebranch" role="treeitem" aria-expanded="false">
+                                    <div class="am-tree-branch-header">
+                                        <button class="am-tree-icon am-tree-icon-caret am-icon-caret-right"><span class="am-sr-only">Open</span></button>
+                                        <button class="am-tree-branch-name">
+                                            <span class="am-tree-icon am-tree-icon-folder"></span>
+                                            <span class="am-tree-label"></span>
+                                        </button>
+                                    </div>
+                                    <ul class="am-tree-branch-children" role="group"></ul>
+                                    <div class="am-tree-loader" role="alert">Loading...</div>
+                                </li>
+                                <li class="am-tree-item am-hide" data-template="treeitem" role="treeitem">
+                                    <button class="am-tree-item-name">
+                                        <span class="am-tree-icon am-tree-icon-item"></span>
+                                        <span class="am-tree-label"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <div class="am-modal" tabindex="-1" id="addlocalplugin_modal">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">
+                添加本地插件服务
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <form class="am-form am-form-horizontal">
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">插件：</div>
+                        <div class="am-u-sm-8 am-u-md-9">
+                            <select multiple data-am-selected id="txt_localplugin">
+                                {{#each data.plugins}}
+                                <option value="{{pluginname}}">{{title}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div id="vld-tooltip" class="am-u-sm-10 am-u-md-10 am-u-sm-pull-1 am-u-md-pull-1 am-alert am-alert-danger">提示信息！</div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal" tabindex="-1" id="addremoteplugin_modal">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">
+                添加远程插件服务
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <form class="am-form am-form-horizontal">
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">插件：</div>
+                        <div class="am-u-sm-8 am-u-md-9">
+                            <select data-am-selected id="txt_remoteplugin">
+                                {{#each data.plugins}}
+                                <option value="{{pluginname}}">{{title}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">节点：</div>
+                        <div class="am-u-sm-8 am-u-md-9">
+                            <select multiple data-am-selected id="txt_remotemnode">
+                                {{#each data.nodes}}
+                                <option value="{{identify}}">{{nodename}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div id="vld-tooltip2" class="am-u-sm-10 am-u-md-10 am-u-sm-pull-1 am-u-md-pull-1 am-alert am-alert-danger">提示信息！</div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+</script>

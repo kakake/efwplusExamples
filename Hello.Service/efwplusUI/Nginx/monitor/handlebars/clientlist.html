@@ -1,0 +1,39 @@
+﻿<script id="clientlist-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+                <button type="button" class="am-btn am-btn-default btn-clientlist-refresh"><a href="#/openmenu/clientlist"><span class="am-icon-refresh"></span> 刷新</a></button>
+            </div>
+        </div>
+        <table class="am-table am-table-striped am-table-hover table-main">
+            <thead>
+                <tr>
+                    <th class="table-0">连接</th>
+                    <th class="table-1">标识</th>
+                    <th class="table-2">客户端名称</th>
+                    <th class="table-2">插件名称</th>
+                    <th class="table-3">心跳数</th>
+                    <th class="table-4">连接时间</th>
+                    <th class="table-5">请求次数</th>
+                    <th class="table-6">接收数据</th>
+                    <th class="table-7">发送数据</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{isconnect}}</td>
+                    <td>{{clientid}}</td>
+                    <td>{{clientname}}</td>
+                    <td>{{plugin}}</td>
+                    <td>{{heartbeatcount}}</td>
+                    <td>{{todate starttime}}</td>
+                    <td>{{requestcount}}</td>
+                    <td>{{receivedata}}</td>
+                    <td>{{senddata}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</script>

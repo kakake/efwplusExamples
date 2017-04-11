@@ -1,0 +1,37 @@
+﻿
+<script id="debuglog-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-g">
+            <form class="am-u-sm-12 am-form-inline">
+                <div class="am-form-group">
+                    <select data-am-selected="" id="logtype">
+                        <option value="MidLog">中间件日志</option>
+                        <option value="WebApiLog">WebAPI日志</option>
+                        <option value="OverTimeLog">超时日志</option>
+                        <option value="TimingTaskLog">定时任务日志</option>
+                        <option value="MILog">医保接口日志</option>
+                    </select>
+                </div>
+                <div class="am-form-group">
+                    <div id="logdate" class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm', viewMode: 'years', minViewMode: 'months'}">
+                        <input type="text" class="am-form-field" placeholder="日历组件" readonly>
+                        <span class="am-input-group-btn am-datepicker-add-on">
+                            <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <span>
+                        <button class="am-btn am-btn-default" type="button" id="btn_logsearch">搜索</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-sm-centered">
+                <pre>{{data}}</pre>
+                <a href="#">下载完成日志</a>
+            </div>
+        </div>
+    </div>
+</script>

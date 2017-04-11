@@ -1,0 +1,77 @@
+﻿<script id="upgrade-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-panel am-panel-primary">
+            <div class="am-panel-hd">发布中间件升级包</div>
+            <div class="am-panel-bd">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button id="mnode_uploadxml" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.xml</button>
+                        <button id="mnode_uploadzip" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.zip</button>
+                    </div>
+                </div>
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <tbody>
+                        {{#each data.MNodeUpgrade}}
+                        <tr>
+                            <td>{{filename}}</td>
+                            <td>{{filesize}}</td>
+                            <td>{{filepath}}</td>
+                            <td><a href="#" value="{{id}}" class="lookfile">查看</a>|<a href="#" value="{{id}}" class="deletefile">删除</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="am-panel am-panel-primary">
+            <div class="am-panel-hd">发布Web程序升级包</div>
+            <div class="am-panel-bd">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button id="web_uploadxml" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.xml</button>
+                        <button id="web_uploadzip" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.zip</button>
+                    </div>
+                </div>
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <tbody>
+                        {{#each data.WebUpgrade}}
+                        <tr>
+                            <td>{{filename}}</td>
+                            <td>{{filesize}}</td>
+                            <td>{{filepath}}</td>
+                            <td><a href="#" value="{{id}}" class="lookfile">查看</a>|<a href="#" value="{{id}}" class="deletefile">删除</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="am-panel am-panel-primary">
+            <div class="am-panel-hd">发布桌面程序升级包</div>
+            <div class="am-panel-bd">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button id="win_uploadxml" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.xml</button>
+                        <button id="win_uploadzip" type="button" class="am-btn am-btn-default btn-clientlist-refresh"><span class="am-icon-cloud-upload"></span> 上传update.zip</button>
+                    </div>
+                </div>
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <tbody>
+                        {{#each data.ClientUpgrade}}
+                        <tr>
+                            <td>{{filename}}</td>
+                            <td>{{filesize}}</td>
+                            <td>{{filepath}}</td>
+                            <td><a href="#" value="{{id}}" class="lookfile">查看</a>|<a href="#" value="{{id}}" class="deletefile">删除</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</script>

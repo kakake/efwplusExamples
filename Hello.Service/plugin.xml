@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <section name="plugin" type="EFWCoreLib.CoreFrame.Plugin.PluginSectionHandler, EFWCoreLib.CoreFrame" />
+  </configSections>
+  <unity>
+    <container>
+    </container>
+  </unity>
+  <plugin name="Hello.Service" version="1.0" title="Hello服务" author="kakake" plugintype="Wcf" defaultdbkey="SQL2005" defaultcachekey="Cache Manager" isentry="1">
+    <baseinfo>
+    </baseinfo>
+  </plugin>
+</configuration>

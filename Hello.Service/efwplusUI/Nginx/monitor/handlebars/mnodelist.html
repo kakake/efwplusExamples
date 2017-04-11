@@ -1,0 +1,104 @@
+﻿<script id="mnodelist-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+                <button id="btn_mnodelist_ref" type="button" class="am-btn am-btn-default"><span class="am-icon-refresh"></span> 刷新</button>
+                <button id="btn_mnodelist_add" type="button" class="am-btn am-btn-default"><span class="am-icon-plus-square"></span> 添加</button>
+                <button id="btn_mnodelist_edit" type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span> 编辑</button>
+                <button id="btn_mnodelist_reg" type="button" class="am-btn am-btn-default"><span class="am-icon-at"></span> 生成注册码</button>
+                <button id="btn_mnodelist_stop" type="button" class="am-btn am-btn-default"><span class="am-icon-remove"></span> 停用</button>
+            </div>
+        </div>
+        <table class="am-table am-table-striped am-table-hover table-main">
+            <thead>
+                <tr>
+                    <th class="table-1">中间件名称</th>
+                    <th class="table-2">机器码</th>
+                    <th class="table-3">创建时间</th>
+                    <th class="table-4">备注</th>
+                    <th class="table-5">停用</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr value="{{tojson this}}">
+                    <td>{{nodename}}({{identify}})</td>
+                    <td>{{machinecode}}</td>
+                    <td>{{createdate}}</td>
+                    <td>{{memo}}</td>
+                    <td>{{todelflag delflag}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="am-modal" tabindex="-1" id="node_modal">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">
+                中间件节点
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <form id="form_addnode" class="am-form am-form-horizontal">
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">名称：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_nodename" type="text" class="am-form-field am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">机器码：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_maccode" type="text" class="am-form-field am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">备注：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><textarea id="txt_memo" rows="5" class="am-form-field am-modal-prompt-input" required /></div>
+                        <div id="vld-tooltip" class="am-u-sm-10 am-u-md-10 am-u-sm-pull-1 am-u-md-pull-1 am-alert am-alert-danger">提示信息！</div>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal" tabindex="-1" id="regcode_modal">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">
+                注册码
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <form class="am-form am-form-horizontal">
+                        <div class="">
+                            <div class="am-u-sm-4 am-u-md-3 am-form-label" style="text-align:right;">机器码：</div>
+                            <div class="am-u-sm-8 am-u-md-9"><input id="txt_maccode2" type="text" class="am-modal-prompt-input" disabled /></div>
+                        </div>
+                        <div class="">
+                            <div class="am-u-sm-4 am-u-md-3 am-form-label" style="text-align:right;">注册码：</div>
+                            <div class="am-u-sm-8 am-u-md-9"><textarea id="txt_regcode" rows="5" class="am-modal-prompt-input" required /></div>
+                        </div>
+                        <div class="">
+                            <div class="am-u-sm-4 am-u-md-3 am-form-label" style="text-align:right;">到期日：</div>
+                            <div class="am-u-sm-8 am-u-md-9">
+                                <div id="regdate" class="am-input-group am-datepicker-date" style="padding-top:5px;" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                                    <input type="text" class="am-form-field" readonly>
+                                    <span class="am-input-group-btn am-datepicker-add-on">
+                                        <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="am-u-sm-10 am-u-md-10 am-u-sm-push-2 am-u-md-push-2" style="padding-top:5px;">
+                                <button id="btn_createregcode" type="button" class="am-btn am-btn-primary">生成注册码</button>
+                            </div>
+                        </div>
+                        <div id="vld-tooltip2" class="am-u-sm-10 am-u-md-10 am-u-sm-push-1 am-u-md-push-1 am-alert am-alert-danger">提示信息！</div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pluginsys>
+  <WcfModulePlugin>
+    <Plugin name="MainFrame.Service" path="ModulePlugin/WcfMainUIFrame/plugin.xml" title="主框架服务插件" version="1.0" />
+    <Plugin name="Books.Service" path="ModulePlugin/Books_Wcf/plugin.xml" title="Books服务插件" version="1.0" />
+    <Plugin name="Hello.Service" path="ModulePlugin/Hello.Service/plugin.xml" title="Hello服务" version="1.0" />
+  </WcfModulePlugin>
+</pluginsys>

@@ -1,0 +1,66 @@
+﻿<script id="pluginlist-template" type="text/x-handlebars-template">
+    <div class="am-u-sm-12">
+        <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+                <button id="btn_plugin_ref" type="button" class="am-btn am-btn-default"><span class="am-icon-refresh"></span> 刷新</button>
+                <button id="btn_plugin_add" type="button" class="am-btn am-btn-default"><span class="am-icon-plus-square"></span> 添加</button>
+                <button id="btn_plugin_edit" type="button" class="am-btn am-btn-default"><span class="am-icon-pencil"></span> 编辑</button>
+                <button id="btn_plugin_upload" type="button" class="am-btn am-btn-default"><span class="am-icon-cloud-upload"></span> 上传插件包</button>
+                <button id="btn_plugin_stop" type="button" class="am-btn am-btn-default"><span class="am-icon-remove"></span> 停用</button>
+            </div>
+        </div>
+        <table class="am-table am-table-striped am-table-hover table-main">
+            <thead>
+                <tr>
+                    <th class="table-1">插件名</th>
+                    <th class="table-2">名称</th>
+                    <th class="table-3">版本</th>
+                    <th class="table-4">作者</th>
+                    <th class="table-5">说明</th>
+                    <th class="table-6">停用</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr value="{{tojson this}}">
+                    <td>{{pluginname}}</td>
+                    <td>{{title}}</td>
+                    <td>{{versions}}</td>
+                    <td>{{author}}</td>
+                    <td>{{introduce}}</td>
+                    <td>{{todelflag delflag}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="am-modal" tabindex="-1" id="plugin_modal">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">
+                插件服务
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <form class="am-form am-form-horizontal">
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">插件名：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_pluginname" type="text" class="am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">名称：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_title" type="text" class="am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">版本：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_versions" type="text" class="am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">作者：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><input id="txt_author" type="text" class="am-modal-prompt-input" required /></div>
+                        <div class="am-u-sm-4 am-u-md-3 am-form-label">说明：</div>
+                        <div class="am-u-sm-8 am-u-md-9"><textarea id="txt_introduce" rows="5" class="am-modal-prompt-input" required /></div>
+                        <div id="vld-tooltip" class="am-u-sm-10 am-u-md-10 am-u-sm-pull-1 am-u-md-pull-1 am-alert am-alert-danger">提示信息！</div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+            </div>
+        </div>
+    </div>
+</script>
