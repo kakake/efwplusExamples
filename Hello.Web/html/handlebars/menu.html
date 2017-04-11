@@ -1,0 +1,16 @@
+﻿<script id="menu-template" type="text/x-handlebars-template">
+    <ul class="am-list admin-sidebar-list">
+        <li><a href="#/openmenu/home"><span class="am-icon-home"></span> 首页</a></li>
+        {{#each this}}
+        <li class="admin-parent">
+            <a class="am-cf" data-am-collapse="{target: '#{{moudleid}}-nav'}"><span class="am-icon-align-justify"></span> {{moudlename}} <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+            <ul class="am-list am-collapse admin-sidebar-sub" id="{{moudleid}}-nav">
+                {{#each child}}
+                <li><a href="#/openmenu/{{Id}}"><span class="am-icon-file-o"></span> {{Name}}</a></li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+        <li><a href="#/openmenu/quit"><span class="am-icon-sign-out"></span> 注销</a></li>
+    </ul>
+</script>
