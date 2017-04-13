@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using EFWCoreLib.WcfFrame.DataSerialize;
+using efwplusWebApi.App_Start;
 
 namespace Hello.Web.Controllers
 {
-    public class Hello2Controller : ApiController
+    public class Hello2Controller :  EApiController
     {
         [HttpGet]
         public object GetHello()
         {
-            return "Hello World";
+            ServiceResponseData retdata = InvokeWcfService("Hello.Service", "HelloController", "Hello");
+            return retdata.GetData<string>(0);
         }
     }
 }
