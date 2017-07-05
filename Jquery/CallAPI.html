@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Ajax调用efwplus中间件服务</title>
+</head>
+<body>
+<p align="center">Ajax调用efwplus中间件服务</p>
+<hr/>
+<form method="post">
+  <label>请求地址:</label>
+  <input type="text" id="apiurl" value="http://36.111.200.233:7711/HttpService" style="width:500px"/>
+  <br><br>
+  <label>请求参数:</label>
+  <textarea id="apiargs" style="width:500px" rows=10 >
+{
+    "sysright": {
+        "token": ""
+    },
+    "plugin": "Books.Service",
+    "controller": "bookWcfController",
+    "method": "GetBooks"
+}
+    </textarea>
+  <br><br>
+  <input id="btn_login" type="button" value="请  求" onclick="request();" />
+</form>
+<script src="jquery.min.js"></script>
+<script src="jquery.json-2.3.min.js"></script>
+<script type="text/javascript">
+    //
+    function request() {
+        //alert($('#apiargs').val());
+        $.ajax({
+            type: "post",
+            url: $('#apiurl').val(),
+            data: $.parseJSON($('#apiargs').val()),
+            success: function (retdata) {
+                alert(retdata);
+            },
+            error: function (retdata) {
+                alert(retdata);
+            }
+        });
+    }
+</script>
+</body>
+</html>
